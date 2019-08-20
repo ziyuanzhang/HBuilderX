@@ -1,0 +1,142 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>MiHotel</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	</head>
+
+	<body>
+	  <script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			var addUrl = "",
+				hasLogin = false;
+			var mv = null,
+				mv2 = null,
+				self = null;
+	
+			mui.plusReady(function() {
+				 mui.init({  
+	            beforeback: function(){  
+	            	mv.canBack(function(e) { //监听webview窗口是否可以返回                      
+                        if(e.canBack) { //可以返回  
+                            mv.back(); //返回上一页面  
+                        } else { //不可以返回  
+                        	plus.nativeUI.confirm("确定退出", function(e){
+								if(e.index == 0){
+									plus.runtime.quit(); //退出app  
+								}
+							});
+                        }
+                    })
+	                return false;  
+	            }  
+	         });
+				self = plus.webview.currentWebview();
+				mv = plus.webview.create("index.html", "MiHotel", {//http://192.168.2.99:9999/#/login
+					top: 0,
+					bottom: 0
+				});
+				self.append(mv);				
+			});
+
+	
+
+		
+
+	
+
+			
+
+			function logD(d, m) {
+				if(typeof(d) == "string") {
+					console.log((m == undefined ? "" : m) + d);
+				} else {
+					console.log((m == undefined ? "" : m) + JSON.stringify(d));
+				}
+			}
+
+			
+			function openUrl(url) {
+				plus.statistic.eventTrig("openurl");
+				mv2 = plus.webview.create(url, 'web', {
+					'popGesture': 'close',
+					titleNView: {
+						backgroundColor: '#393C41',
+						titlecolor: '#fff',
+						progress: { //进度条
+							color: '#FF0000',
+							height: '1px'
+						},
+						buttons: [{ //后退按钮
+							'float': 'left',
+							'color': '#fff',
+							'fontSize':'18px',
+							fontSrc: 'font/b.ttf',
+							text: '\ue637',
+							onclick: function() {
+								mv2.canBack(function(e) {
+									if(e.canBack) {
+										mv2.back();
+									} else {
+										mv2.close();
+										mv.show();
+									}
+								});
+							}
+						}, {
+							'float': 'right',
+							'color': '#fff',
+							'fontSize':'18px',
+							fontSrc: 'font/b.ttf',
+							text: '\ue680',
+							onclick: function() {
+								mv2.close();
+								mv.show();
+							}
+						}]
+					}
+				});
+				mv.hide()
+				self.append(mv2);
+			}
+			function closemv() {
+				mv2.close();
+				mv.show();
+			}
+		
+			function getcardCode() {
+				var w = plus.webview.create('barcode.html', 'barcode', {
+					'titleNView': {
+						'backgroundColor': '#393C41',
+						'titleText': "扫一扫",
+						'titleColor': '#FFFFFF',
+						autoBackButton: true
+					}
+				});
+				plus.webview.show(w, 'slide-in-right', '300ms');
+			}
+			function barback(value) {
+				value = value.replace(/'/, "");
+				mv.evalJS("window.barback('" + value + "')");
+			}
+			function copy(text) {
+				if(plus.os.name == "iOS") {
+					var UIPasteboard = plus.ios.importClass("UIPasteboard");
+					var generalPasteboard = UIPasteboard.generalPasteboard();
+					generalPasteboard.setValueforPasteboardType(text, "public.utf8-plain-text");
+				} else {
+					var Context = plus.android.importClass("android.content.Context");
+					var main = plus.android.runtimeMainActivity();
+					var clip = main.getSystemService(Context.CLIPBOARD_SERVICE);
+					plus.android.invoke(clip, "setText", text);
+				}
+			}
+			
+		
+		
+
+		</script>
+	</body>
+</html>

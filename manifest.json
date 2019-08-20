@@ -1,0 +1,264 @@
+{
+    "@platforms" : [ "android", "iPhone", "iPad" ],
+    "id" : "mobilepms2", /*应用的标识，创建应用时自动生成，勿手动修改*/
+    "name" : "绿云MiHotel", /*应用名称，程序桌面图标名称*/
+    "version" : {
+        "name" : "2.0.1", /*应用版本名称*/
+        "code" : "101"
+    },
+    "description" : "绿云ihotel酒店信息化平台MiHotel", /*应用描述信息*/
+    "icons" : {
+        "72" : "icon.png"
+    },
+    "launch_path" : "start.html", /*应用的入口页面，默认为根目录下的index.html；支持网络地址，必须以http://或https://开头*/
+    "developer" : {
+        "name" : "edobnet", /*开发者名称*/
+        "email" : "wyj@ihotel.cn", /*开发者邮箱地址*/
+        "url" : "http://www.ipms.cn"
+    },
+    "permissions" : {
+        "Cache" : {
+            "description" : "管理应用缓存"
+        },
+        "Console" : {
+            "description" : "跟踪调试输出日志"
+        },
+        "Events" : {
+            "description" : "应用扩展事件"
+        },
+        "Runtime" : {},
+        "Webview" : {},
+        "NativeUI" : {},
+        "Invocation" : {},
+        "XMLHttpRequest" : {},
+        "Device" : {},
+        "Downloader" : {},
+        "NativeObj" : {},
+        "Storage" : {},
+        "Barcode" : {},
+        "Camera" : {},
+        "Statistic" : {}
+    },
+    "plus" : {
+        "splashscreen" : {
+            "autoclose" : true, /*是否自动关闭程序启动界面，true表示应用加载应用入口页面后自动关闭；false则需调plus.navigator.closeSplashscreen()关闭*/
+            "waiting" : true
+        },
+        "statusbar" : {
+            "immersed" : false,
+            "style" : "UIStatusBarStyleBlackOpaque",
+            "background" : "#393C41"
+        },
+        "useragent" : {
+            "value" : "GreenCloud",
+            "concatenate" : true
+        },
+        "speech" : {
+            "ifly" : {
+                "appid" : "5a5ddd1f"
+            }
+        },
+        "runmode" : "liberate", /*应用的首次启动运行模式，可取liberate或normal，liberate模式在第一次启动时将解压应用资源（Android平台File API才可正常访问_www目录）*/
+        "signature" : "Sk9JTiBVUyBtYWlsdG86aHIyMDEzQGRjbG91ZC5pbw==", /*可选，保留给应用签名，暂不使用*/
+        "distribute" : {
+            "plugins" : {
+                "statics" : {},
+                "share" : {},
+                "push" : {},
+                "speech" : {}
+            },
+            "apple" : {
+                "appid" : "", /*iOS应用标识，苹果开发网站申请的appid，如io.dcloud.HelloH5*/
+                "mobileprovision" : "", /*iOS应用打包配置文件*/
+                "password" : "", /*iOS应用打包个人证书导入密码*/
+                "p12" : "", /*iOS应用打包个人证书，打包配置文件关联的个人证书*/
+                "devices" : "universal", /*iOS应用支持的设备类型，可取值iphone/ipad/universal*/
+                "frameworks" : []
+            },
+            "google" : {
+                "packagename" : "", /*Android应用包名，如io.dcloud.HelloH5*/
+                "keystore" : "", /*Android应用打包使用的密钥库文件*/
+                "password" : "", /*Android应用打包使用密钥库中证书的密码*/
+                "aliasname" : "", /*Android应用打包使用密钥库中证书的别名*/
+                "permissions" : [
+                    "<uses-feature android:name=\"android.hardware.camera\"/>",
+                    "<uses-feature android:name=\"android.hardware.camera.autofocus\"/>",
+                    "<uses-permission android:name=\"android.permission.CALL_PHONE\"/>",
+                    "<uses-permission android:name=\"android.permission.CAMERA\"/>",
+                    "<uses-permission android:name=\"android.permission.FLASHLIGHT\"/>",
+                    "<uses-permission android:name=\"android.permission.MODIFY_AUDIO_SETTINGS\"/>",
+                    "<uses-permission android:name=\"android.permission.READ_LOGS\"/>",
+                    "<uses-permission android:name=\"android.permission.RECEIVE_BOOT_COMPLETED\"/>",
+                    "<uses-permission android:name=\"android.permission.SYSTEM_ALERT_WINDOW\"/>",
+                    "<uses-permission android:name=\"android.permission.VIBRATE\"/>",
+                    "<uses-permission android:name=\"android.permission.WAKE_LOCK\"/>",
+                    "<uses-permission android:name=\"android.permission.WRITE_SETTINGS\"/>",
+                    "<uses-permission android:name=\"android.permission.RECEIVE_USER_PRESENT\"/>"
+                ]
+            },
+            "orientation" : [ "portrait-primary" ], /*应用支持的方向，portrait-primary：竖屏正方向；portrait-secondary：竖屏反方向；landscape-primary：横屏正方向；landscape-secondary：横屏反方向*/
+            "icons" : {
+                "ios" : {
+                    "prerendered" : true, /*应用图标是否已经高亮处理，在iOS6及以下设备上有效*/
+
+                    /*应用图标，分辨率：512x512，用于自动生成各种尺寸程序图标*/
+                    "iphone" : {
+                        "normal" : "unpackage/res/icons/57x57.png", /*iPhone普通屏幕程序图标，分辨率：57x57*/
+                        "retina" : "unpackage/res/icons/114x114.png", /*iPhone高分屏程序图标，分辨率：114x114*/
+
+                        /*iPhone iOS7高分屏程序图标，分辨率：120x120*/
+                        "spotlight-normal" : "unpackage/res/icons/29x29.png", /*iPhone Spotlight搜索程序图标，分辨率：29x29*/
+                        "spotlight-retina" : "unpackage/res/icons/58x58.png", /*iPhone高分屏Spotlight搜索程序图标，分辨率：58x58*/
+
+                        /*iPhone iOS7高分屏Spotlight搜索程序图标，分辨率：80x80*/
+                        "settings-normal" : "unpackage/res/icons/29x29.png", /*iPhone设置页面程序图标，分辨率：29x29*/
+                        "app@3x" : "unpackage/res/icons/logo-180.png",
+                        "app@2x" : "unpackage/res/icons/logo-120.png",
+                        "settings@2x" : "unpackage/res/icons/logo-58.png",
+                        "settings@3x" : "unpackage/res/icons/logo-87.png",
+                        "spotlight@2x" : "unpackage/res/icons/logo-80.png",
+                        "spotlight@3x" : "unpackage/res/icons/logo-120.png",
+                        "notification@2x" : "unpackage/res/icons/logo-40.png",
+                        "notification@3x" : "unpackage/res/icons/logo-60.png"
+                    },
+                    "ipad" : {
+                        "normal" : "unpackage/res/icons/72x72.png", /*iPad普通屏幕程序图标，分辨率：72x72*/
+                        "retina" : "unpackage/res/icons/144x144.png", /*iPad高分屏程序图标，分辨率：144x144*/
+
+                        /*iPad iOS7程序图标，分辨率：76x76*//*iPad iOS7高分屏程序图标，分辨率：152x152*/
+                        "spotlight-normal" : "unpackage/res/icons/50x50.png", /*iPad Spotlight搜索程序图标，分辨率：50x50*/
+                        "spotlight-retina" : "unpackage/res/icons/100x100.png", /*iPad高分屏Spotlight搜索程序图标，分辨率：100x100*/
+
+                        /*iPad iOS7 Spotlight搜索程序图标，分辨率：40x40*//*iPad iOS7高分屏Spotlight搜索程序图标，分辨率：80x80*//*iPad设置页面程序图标，分辨率：29x29*/
+                        "app" : "",
+                        "app@2x" : "",
+                        "settings" : "",
+                        "spotlight" : "",
+                        "proapp@2x" : "",
+                        "settings@2x" : "",
+                        "spotlight@2x" : "",
+                        "notification" : "",
+                        "notification@2x" : ""
+                    },
+                    "appstore" : "unpackage/res/icons/logo-1024.png"
+                },
+                "android" : {
+                    "mdpi" : "unpackage/res/icons/logo-48.png", /*普通屏程序图标，分辨率：48x48*/
+                    "ldpi" : "unpackage/res/icons/logo-48.png", /*大屏程序图标，分辨率：48x48*/
+                    "hdpi" : "unpackage/res/icons/logo-72.png", /*高分屏程序图标，分辨率：72x72*/
+                    "xhdpi" : "unpackage/res/icons/logo-96.png", /*720P高分屏程序图标，分辨率：96x96*/
+                    "xxhdpi" : "unpackage/res/icons/logo-144.png",
+                    "xxxhdpi" : "unpackage/res/icons/logo-192.png"
+                }
+            },
+            "splashscreen" : {
+                "ios" : {
+                    "iphone" : {
+                        "default" : "", /*iPhone3启动图片选，分辨率：320x480*/
+                        "retina35" : "unpackage/res/640-960.png", /*3.5英寸设备(iPhone4)启动图片，分辨率：640x960*/
+                        "retina40" : "unpackage/res/640-1136.png",
+                        "retina47" : "unpackage/res/750-1334.png",
+                        "retina55" : "unpackage/res/1242-2208.png",
+                        "retina55l" : "",
+                        "iphonex" : "unpackage/res/1125-2436.png",
+                        "iphonexl" : "unpackage/res/2436-1125.png",
+                        "retina47l" : "",
+                        "portrait-896h@3x" : "unpackage/res/1242-2688.png",
+                        "portrait-896h@2x" : "unpackage/res/828-1792.png"
+                    },
+                    "ipad" : {
+                        "portrait" : "unpackage/res/720-1242.png", /*iPad竖屏启动图片，分辨率：768x1004*/
+                        "portrait-retina" : "unpackage/res/640-1136.png", /*iPad高分屏竖屏图片，分辨率：1536x2008*/
+                        "landscape" : "unpackage/res/720-1242.png", /*iPad横屏启动图片，分辨率：1024x748*/
+                        "landscape-retina" : "unpackage/res/640-1136.png", /*iPad高分屏横屏启动图片，分辨率：2048x1496*/
+                        "portrait7" : "", /*iPad iOS7竖屏启动图片，分辨率：768x1024*/
+                        "portrait-retina7" : "", /*iPad iOS7高分屏竖屏图片，分辨率：1536x2048*/
+                        "landscape7" : "", /*iPad iOS7横屏启动图片，分辨率：1024x768*/
+                        "landscape-retina7" : ""
+                    }
+                },
+                "android" : {
+                    "mdpi" : "", /*普通屏启动图片，分辨率：240x282*/
+                    "ldpi" : "", /*大屏启动图片，分辨率：320x442*/
+                    "hdpi" : "unpackage/res/480-800.png", /*高分屏启动图片，分辨率：480x762*/
+                    "xhdpi" : "unpackage/res/720-1280.png", /*720P高分屏启动图片，分辨率：720x1242*/
+                    "xxhdpi" : "unpackage/res/1080-1920.png"
+                }
+            },
+            "debug" : false
+        },
+        "ads" : {
+            "rp" : false,
+            "splash" : false,
+            "push" : false,
+            "spot" : false
+        }
+    },
+    "dependencies" : {
+        "pages" : {
+            "index.html" : {
+                "resources" : [
+                    "js/mui.min.js",
+                    "fonts/mui.ttf",
+                    "css/mui.min.css",
+                    "www/login.html",
+                    "static/js/vendor.bfdf44840732ae724010.js",
+                    "static/js/manifest.37a4c9cec920617a46d2.js",
+                    "static/js/app.24d9764490babb735ddf.js"
+                ],
+                "refer" : [ "target.html", "barcode.html" ],
+                "priority" : 0
+            },
+            "target.html" : {
+                "resources" : [ "js/mui.min.js", "fonts/mui.ttf", "css/mui.min.css" ],
+                "refer" : [],
+                "priority" : 0
+            },
+            "www/login.html" : {
+                "resources" : [
+                    "js/layer_mobile/layer.js",
+                    "www/images/GClogo.png",
+                    "www/pms.js",
+                    "www/images/loginbg.jpg",
+                    "js/layer_mobile/need/layer.css",
+                    "www/jquery-2.1.1.min.js",
+                    "www/connectionSet.html",
+                    "js/mui.min.js",
+                    "locker.html"
+                ],
+                "refer" : [],
+                "priority" : 0
+            },
+            "www/connectionSet.html" : {
+                "resources" : [
+                    "www/default.css",
+                    "www/images/back.png",
+                    "www/bootstrap.min.css",
+                    "js/layer_mobile/layer.js",
+                    "www/pms.js",
+                    "js/layer_mobile/need/layer.css",
+                    "www/jquery-2.1.1.min.js",
+                    "www/login.html",
+                    "www/connectionAdd.html"
+                ],
+                "refer" : [],
+                "priority" : 0
+            },
+            "www/connectionAdd.html" : {
+                "resources" : [ "www/connectionSet.html" ],
+                "refer" : [],
+                "priority" : 0
+            },
+            "start.html" : {
+                "resources" : [ "www/login.html", "locker.html" ],
+                "refer" : [ "index.html", "barcode.html" ],
+                "priority" : 0
+            }
+        },
+        "idle" : {
+            "resources" : [ "js/mui.js", "css/mui.css" ]
+        }
+    },
+    "unpackage" : [ "css/mui.css", "js/mui.js" ],
+    "fullscreen" : false
+}
